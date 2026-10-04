@@ -11,14 +11,17 @@
   "packageManager": "pnpm@10.17.1",
   "scripts": {
     "build": "python3 scripts/metrics.py && node scripts/generate-tables.cjs && cargo build --target wasm32-unknown-unknown --release && node scripts/package.cjs",
-    "test": "cargo test && node scripts/verify-sources.cjs && node scripts/verify.cjs && node scripts/verify-files.cjs && tsx --test tests/*.test.ts",
+    "test": "node scripts/test.cjs",
     "typecheck": "tsc --noEmit",
     "dev": "node scripts/wrangler.mjs dev",
     "mcp:stdio": "tsx mcp/stdio.ts",
     "deploy:check": "node scripts/wrangler.mjs deploy --dry-run --outdir .worker-build",
     "deploy": "node scripts/wrangler.mjs deploy",
-    "format": "prettier --write bridge.js style.css scripts mcp worker tests package.json samples.json README.md && cargo fmt && rustfmt src/xlsx.rs",
-    "format:check": "prettier --check bridge.js style.css scripts mcp worker tests package.json samples.json README.md && cargo fmt --check && rustfmt --check src/xlsx.rs"
+    "format": "prettier --write bridge.js style.css scripts mcp worker tests package.json samples.json README.md docs SECURITY.md PRIVACY.md THIRD_PARTY_NOTICES.md playwright.config.ts && cargo fmt && rustfmt src/xlsx.rs",
+    "format:check": "prettier --check bridge.js style.css scripts mcp worker tests package.json samples.json README.md docs SECURITY.md PRIVACY.md THIRD_PARTY_NOTICES.md playwright.config.ts && cargo fmt --check && rustfmt --check src/xlsx.rs",
+    "test:ui": "node scripts/ui-tests.cjs",
+    "test:all": "pnpm test && pnpm test:ui",
+    "test:report": "node scripts/report-tests.cjs"
   },
   "dependencies": {
     "@modelcontextprotocol/server": "2.3.0",
@@ -27,8 +30,10 @@
   "devDependencies": {
     "@cloudflare/workers-types": "5.20261003.1",
     "@modelcontextprotocol/client": "2.3.0",
+    "@playwright/test": "1.63.0",
     "@types/node": "^22.0.0",
     "esbuild": "0.28.2",
+    "lucide-static": "1.52.0",
     "prettier": "3.9.9",
     "tsx": "^4.20.0",
     "typescript": "^5.9.3",

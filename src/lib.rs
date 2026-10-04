@@ -516,6 +516,57 @@ mod tests {
         assert!(!v.canonical().contains("E:X"))
     }
     #[test]
+    fn undefined_values_use_first_defaults() {
+        let v = Vector::parse(EXAMPLE).unwrap();
+        for (key, value) in [("E", "A"), ("CR", "H"), ("IR", "H"), ("AR", "H")] {
+            assert_eq!(v.effective(key), value);
+        }
+        assert_eq!(v.nomenclature(), "CVSS-B");
+    }
+    #[test]
+    fn modified_metrics_override_base_and_x_inherits() {
+        let changed = Vector::parse(&format!("{EXAMPLE}/MAV:L/MAC:H/MUI:A")).unwrap();
+        assert_eq!(changed.effective("AV"), "L");
+        assert_eq!(changed.effective("AC"), "H");
+        assert_eq!(changed.effective("UI"), "A");
+        assert_eq!(changed.nomenclature(), "CVSS-BE");
+        let inherited = Vector::parse(&format!("{EXAMPLE}/MAV:X")).unwrap();
+        assert_eq!(inherited.effective("AV"), "N");
+    }
+    #[test]
+    fn supplemental_values_never_change_score() {
+        let base = Vector::parse(EXAMPLE).unwrap();
+        let supplemental =
+            Vector::parse(&format!("{EXAMPLE}/S:P/AU:Y/R:A/V:C/RE:H/U:Red")).unwrap();
+        assert_eq!(base.score(), supplemental.score());
+        assert_eq!(supplemental.nomenclature(), "CVSS-B");
+    }
+    #[test]
+    fn oversized_vectors_and_invalid_metric_values_fail() {
+        assert!(Vector::parse(&"a".repeat(8193))
+            .err()
+            .unwrap()
+            .contains("too long"));
+        for suffix in ["/E:B", "/MSI:Z", "/CR:N", "/U:red"] {
+            assert!(Vector::parse(&format!("{EXAMPLE}{suffix}")).is_err());
+        }
+    }
+    #[test]
+    fn json_and_xml_escape_customer_text() {
+        assert_eq!(json_string("\"\\\n\t"), "\"\\\"\\\\\\n\\t\"");
+        assert_eq!(xml("<note>&"), "&lt;note&gt;&amp;");
+    }
+    #[test]
+    fn xlsx_zip_crc_and_numeric_score_are_valid() {
+        assert_eq!(crc32(b"123456789"), 0xcbf43926);
+        let bytes = export_xlsx("Assessment\x1eTitle\x1fQA\x1eVector\x1fCVSS:4.0\x1eScore\x1fn:7.6\x1eAV\x1f=literal text");
+        assert_eq!(&bytes[..4], b"PK\x03\x04");
+        let stored = String::from_utf8_lossy(&bytes);
+        assert!(stored.contains("<v>7.6</v>"));
+        assert!(stored.contains("=literal text"));
+        assert!(!stored.contains("<f>"));
+    }
+    #[test]
     fn boundaries() {
         let zero = EXAMPLE.replace("VC:H/VI:H", "VC:N/VI:N");
         assert_eq!(Vector::parse(&zero).unwrap().score(), 0.0);

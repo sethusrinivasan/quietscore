@@ -229,6 +229,9 @@ root.addEventListener('click', async (e) => {
   }
 });
 // BROWSER_FEATURES_BEGIN
+function shouldShowMetricNotes(note, locked) {
+  return !locked || (typeof note === 'string' && note.trim().length > 0);
+}
 // Browser storage and print are opt-in device APIs; scoring remains in Rust/WASM.
 const DRAFT_KEY = 'quietscore.drafts.v1';
 let scenario = { id: null, title: '', notes: '', sampleId: null, metricNotes: {} },
@@ -354,12 +357,17 @@ function renderScenario() {
     root.querySelector('[data-action="reset"]').hidden = true;
     root.querySelector('.score-top .eyebrow').textContent = 'PUBLISHED SAMPLE · READ-ONLY';
   }
-  root
-    .querySelector('.export-buttons')
-    .insertAdjacentHTML(
-      'beforeend',
-      '<button data-action="pdf">↓ PDF</button><button data-action="excel">↓ Excel</button>',
-    );
+  root.querySelector('.export-buttons').innerHTML = [
+    ['json', 'JSON', 'file-json'],
+    ['text', 'Plain text', 'file-text'],
+    ['pdf', 'PDF', 'file-type'],
+    ['excel', 'Excel', 'file-spreadsheet'],
+  ]
+    .map(
+      ([action, label, icon]) =>
+        `<button data-action="${action}" aria-label="Export ${label}">${EXPORT_ICONS[icon]}<span>${label}</span></button>`,
+    )
+    .join('');
   decorateMetrics(metrics);
   if (wizard === null) return;
   const heading = root.querySelector('.group-heading'),
@@ -701,6 +709,8 @@ function decorateMetrics(metrics) {
       }
       field.append(block);
     }
+    const noteText = scenario.metricNotes?.[key] ?? '';
+    if (!shouldShowMetricNotes(noteText, readOnly)) continue;
     const note = document.createElement('label');
     note.className = 'metric-notes';
     note.innerHTML = `Optional notes for ${escapeHtml(m.name)}<textarea data-metric-note="${key}" maxlength="2000" rows="2" ${readOnly ? 'readonly' : ''} placeholder="Why this classification? Add assumptions or evidence.">${escapeHtml(scenario.metricNotes?.[key] ?? '')}</textarea>`;

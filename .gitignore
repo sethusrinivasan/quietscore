@@ -8,3 +8,8 @@ generated/
 .env
 .env.*
 !.dev.vars.example
+
+/reports/
+/playwright-report/
+/test-results/
+/.openai/

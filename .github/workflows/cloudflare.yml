@@ -43,6 +43,23 @@ jobs:
         run: pnpm typecheck
       - name: Verify FIRST parity, privacy, exports, and MCP
         run: pnpm test
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps
+      - name: Run cross-browser UI tests
+        run: pnpm test:ui
+      - name: Publish test pass rates
+        if: always()
+        run: pnpm test:report
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: quietscore-test-results-${{ github.run_id }}
+          path: |
+            reports/
+            test-results/
+          retention-days: 7
+          if-no-files-found: warn
       - name: Validate Cloudflare package
         run: pnpm deploy:check
       - name: Deploy main to Cloudflare

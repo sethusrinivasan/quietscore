@@ -145,3 +145,21 @@ test('entire assessment Excel snapshot includes notes and 32 metrics with litera
   assert.doesNotMatch(text, /<f>/);
   assert.match(text, /<v>7\.6<\/v>/);
 });
+
+test('read-only metric notes omit empty and whitespace-only text, retaining real notes and editable fields', () => {
+  const f = fixture();
+  for (const value of ['', '  ', '\n\t']) {
+    assert.equal(
+      runInContext(`shouldShowMetricNotes(${JSON.stringify(value)}, true)`, f.context),
+      false,
+    );
+    assert.equal(
+      runInContext(`shouldShowMetricNotes(${JSON.stringify(value)}, false)`, f.context),
+      true,
+    );
+  }
+  assert.equal(
+    runInContext("shouldShowMetricNotes('Evidence from advisory', true)", f.context),
+    true,
+  );
+});
