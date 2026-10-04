@@ -240,7 +240,7 @@ The release build uses size optimization, link-time optimization, one code-gener
 
 ## Automatic GitHub deployments
 
-`.github/workflows/cloudflare.yml` validates every pull request targeting `main`. Every push to `main` (including merged pull requests) builds the optimized Rust/WASM application, checks formatting and TypeScript, compares scores with FIRST, tests exports and MCP, validates the Worker bundle, then deploys the `quietscore` Worker. A failed check prevents deployment. Deployments are serialized and can also be requested through GitHub Actions → Run workflow on `main`. Pull requests have no deployment step and do not receive Cloudflare credentials.
+`.github/workflows/cloudflare.yml` validates every pull request targeting `main`. Every push to `main` (including merged pull requests) builds the optimized Rust/WASM application, checks formatting and TypeScript, compares scores with FIRST, tests exports and MCP, validates the Worker bundle, then deploys the `quietscore` Worker. A failed check prevents deployment. Deployments are serialized with GitHub’s `queue: max` (up to 100 waiting runs), so rapid pushes do not replace the single pending deployment; runs beyond GitHub’s queue limit require rerunning. Deployments can also be requested through GitHub Actions → Run workflow on `main`. Pull requests have no deployment step and do not receive Cloudflare credentials.
 
 Set these once in GitHub repository Settings → Secrets and variables → Actions:
 
