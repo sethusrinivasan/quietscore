@@ -1,7 +1,7 @@
 const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert/strict');const root=path.resolve(__dirname,'..');
 (async()=>{
  const c={};for(const file of ['cvss_lookup.js','max_composed.js','max_severity.js','cvss_score.js'])vm.runInNewContext(fs.readFileSync(path.join(root,'reference',file),'utf8'),c);
- const e=(await WebAssembly.instantiate(fs.readFileSync(path.join(root,'target/wasm32-unknown-unknown/release/quiet_cvss.wasm')),{})).instance.exports;
+ const e=(await WebAssembly.instantiate(fs.readFileSync(path.join(root,'target/wasm32-unknown-unknown/release/quietscore.wasm')),{})).instance.exports;
  const enc=new TextEncoder(),dec=new TextDecoder();function run(a,s=''){const b=enc.encode(s);new Uint8Array(e.memory.buffer,e.input_ptr(),b.length).set(b);const n=e.run(a,b.length);return dec.decode(new Uint8Array(e.memory.buffer,e.output_ptr(),n));}
  const metrics=JSON.parse(fs.readFileSync(path.join(root,'metrics.json')));const base=metrics.filter(m=>m.group===0);const defaults=Object.fromEntries(metrics.map(m=>[m.key,m.group===0?m.options[0].value:'X']));
  let tested=0;const mismatches=[];

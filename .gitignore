@@ -1,2 +1,10 @@
 /target/
 .sites-runtime/
+node_modules/
+generated/
+.worker-build/
+.wrangler/
+.dev.vars
+.env
+.env.*
+!.dev.vars.example

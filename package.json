@@ -1,0 +1,33 @@
+{
+  "name": "quietscore",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Private CVSS 4.0 calculator and Rust/WebAssembly MCP tools",
+  "license": "BSD-2-Clause",
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@10.17.1",
+  "scripts": {
+    "build": "python3 scripts/metrics.py && node scripts/generate-tables.cjs && cargo build --target wasm32-unknown-unknown --release && node scripts/package.cjs",
+    "test": "cargo test && node scripts/verify-sources.cjs && node scripts/verify.cjs && node scripts/verify-files.cjs && tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "dev": "node scripts/wrangler.mjs dev",
+    "mcp:stdio": "tsx mcp/stdio.ts",
+    "deploy:check": "node scripts/wrangler.mjs deploy --dry-run --outdir .worker-build",
+    "deploy": "node scripts/wrangler.mjs deploy"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.3.0",
+    "zod": "^4.2.0"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.3.0",
+    "@cloudflare/workers-types": "5.20261003.1",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.3",
+    "wrangler": "4.147.0"
+  }
+}
