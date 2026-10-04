@@ -1,0 +1,833 @@
+[
+  {
+    "key": "AV",
+    "name": "Attack vector",
+    "question": "Where can the attacker reach the vulnerable component?",
+    "options": [
+      {
+        "value": "N",
+        "label": "Network",
+        "explanation": "The component can be attacked remotely across a network, potentially over the internet."
+      },
+      {
+        "value": "A",
+        "label": "Adjacent",
+        "explanation": "The attacker must share a restricted network context, such as the same local subnet or Bluetooth range."
+      },
+      {
+        "value": "L",
+        "label": "Local",
+        "explanation": "The attacker needs local access or must cause a user to interact with a locally delivered payload."
+      },
+      {
+        "value": "P",
+        "label": "Physical",
+        "explanation": "The attacker must physically touch or manipulate the vulnerable system."
+      }
+    ],
+    "group": 0
+  },
+  {
+    "key": "AC",
+    "name": "Attack complexity",
+    "question": "Must the attacker overcome a security measure?",
+    "options": [
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "No special action is needed to evade or overcome a security mechanism."
+      },
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "The attacker must evade or overcome a security mechanism, such as address randomization or obtaining a target-specific secret."
+      }
+    ],
+    "group": 0
+  },
+  {
+    "key": "AT",
+    "name": "Attack requirements",
+    "question": "Does success depend on a particular deployment or execution condition?",
+    "options": [
+      {
+        "value": "N",
+        "label": "None",
+        "explanation": "No particular deployment or execution condition is required for exploitation."
+      },
+      {
+        "value": "P",
+        "label": "Present",
+        "explanation": "Success depends on conditions outside the attacker’s control, such as a race or an on-path position."
+      }
+    ],
+    "group": 0
+  },
+  {
+    "key": "PR",
+    "name": "Privileges required",
+    "question": "What access must the attacker already have?",
+    "options": [
+      {
+        "value": "N",
+        "label": "None",
+        "explanation": "No authenticated privileges are needed before the attack."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "The attacker needs basic user privileges, usually limited to their own settings or resources."
+      },
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "The attacker needs significant administrative or equivalent control before exploitation."
+      }
+    ],
+    "group": 0
+  },
+  {
+    "key": "UI",
+    "name": "User interaction",
+    "question": "What must someone other than the attacker do?",
+    "options": [
+      {
+        "value": "N",
+        "label": "None",
+        "explanation": "The attack succeeds without another person taking action."
+      },
+      {
+        "value": "P",
+        "label": "Passive",
+        "explanation": "A person interacts normally with the system, such as viewing a page or receiving content; no deliberate bypass is needed."
+      },
+      {
+        "value": "A",
+        "label": "Active",
+        "explanation": "A person must take a specific conscious action, such as importing a file or overriding a warning."
+      }
+    ],
+    "group": 0
+  },
+  {
+    "key": "VC",
+    "name": "Confidentiality · vulnerable system",
+    "question": "Can the attacker read protected information? Assess the vulnerable system.",
+    "options": [
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "All information can be exposed, or the exposed information has a direct, serious consequence."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "Some restricted information is exposed, but the attacker has limited control over what is revealed."
+      },
+      {
+        "value": "N",
+        "label": "None",
+        "explanation": "There is no confidentiality impact on the vulnerable system."
+      }
+    ],
+    "group": 0
+  },
+  {
+    "key": "VI",
+    "name": "Integrity · vulnerable system",
+    "question": "Can the attacker change protected information? Assess the vulnerable system.",
+    "options": [
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "The attacker can change any information, or the modification has a direct, serious consequence."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "Some information can be changed, but the scope or consequences are limited."
+      },
+      {
+        "value": "N",
+        "label": "None",
+        "explanation": "There is no integrity impact on the vulnerable system."
+      }
+    ],
+    "group": 0
+  },
+  {
+    "key": "VA",
+    "name": "Availability · vulnerable system",
+    "question": "Can the attacker interrupt access to the system? Assess the vulnerable system.",
+    "options": [
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "Access can be fully denied, or the disruption has a direct, serious consequence."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "Performance or access is reduced, but the system remains at least partially available."
+      },
+      {
+        "value": "N",
+        "label": "None",
+        "explanation": "There is no availability impact on the vulnerable system."
+      }
+    ],
+    "group": 0
+  },
+  {
+    "key": "SC",
+    "name": "Confidentiality · subsequent system",
+    "question": "Can the attacker read protected information? Assess the subsequent system.",
+    "options": [
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "All information can be exposed, or the exposed information has a direct, serious consequence."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "Some restricted information is exposed, but the attacker has limited control over what is revealed."
+      },
+      {
+        "value": "N",
+        "label": "None",
+        "explanation": "There is no confidentiality impact on the subsequent system."
+      }
+    ],
+    "group": 0
+  },
+  {
+    "key": "SI",
+    "name": "Integrity · subsequent system",
+    "question": "Can the attacker change protected information? Assess the subsequent system.",
+    "options": [
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "The attacker can change any information, or the modification has a direct, serious consequence."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "Some information can be changed, but the scope or consequences are limited."
+      },
+      {
+        "value": "N",
+        "label": "None",
+        "explanation": "There is no integrity impact on the subsequent system."
+      }
+    ],
+    "group": 0
+  },
+  {
+    "key": "SA",
+    "name": "Availability · subsequent system",
+    "question": "Can the attacker interrupt access to the system? Assess the subsequent system.",
+    "options": [
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "Access can be fully denied, or the disruption has a direct, serious consequence."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "Performance or access is reduced, but the system remains at least partially available."
+      },
+      {
+        "value": "N",
+        "label": "None",
+        "explanation": "There is no availability impact on the subsequent system."
+      }
+    ],
+    "group": 0
+  },
+  {
+    "key": "E",
+    "name": "Exploit maturity",
+    "question": "What evidence of exploitation exists?",
+    "options": [
+      {
+        "value": "X",
+        "label": "Not defined",
+        "explanation": "No threat assessment is supplied. Scoring assumes the most severe value: Attacked."
+      },
+      {
+        "value": "A",
+        "label": "Attacked",
+        "explanation": "Attacks have been reported, or usable tools exist that simplify exploitation."
+      },
+      {
+        "value": "P",
+        "label": "Proof of concept",
+        "explanation": "A proof of concept is available, but attacks have not been reported and practical exploitation tools are not known."
+      },
+      {
+        "value": "U",
+        "label": "Unreported",
+        "explanation": "No public proof of concept or attacks are known after considering available intelligence."
+      }
+    ],
+    "group": 1
+  },
+  {
+    "key": "CR",
+    "name": "Confidentiality requirement",
+    "question": "How important is this security property in your environment?",
+    "options": [
+      {
+        "value": "X",
+        "label": "Not defined",
+        "explanation": "No local requirement is supplied. Scoring assumes High."
+      },
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "Losing this property would have a catastrophic adverse effect on the organization or people."
+      },
+      {
+        "value": "M",
+        "label": "Medium",
+        "explanation": "Losing this property would have a serious adverse effect."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "Losing this property would have a limited adverse effect."
+      }
+    ],
+    "group": 2
+  },
+  {
+    "key": "IR",
+    "name": "Integrity requirement",
+    "question": "How important is this security property in your environment?",
+    "options": [
+      {
+        "value": "X",
+        "label": "Not defined",
+        "explanation": "No local requirement is supplied. Scoring assumes High."
+      },
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "Losing this property would have a catastrophic adverse effect on the organization or people."
+      },
+      {
+        "value": "M",
+        "label": "Medium",
+        "explanation": "Losing this property would have a serious adverse effect."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "Losing this property would have a limited adverse effect."
+      }
+    ],
+    "group": 2
+  },
+  {
+    "key": "AR",
+    "name": "Availability requirement",
+    "question": "How important is this security property in your environment?",
+    "options": [
+      {
+        "value": "X",
+        "label": "Not defined",
+        "explanation": "No local requirement is supplied. Scoring assumes High."
+      },
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "Losing this property would have a catastrophic adverse effect on the organization or people."
+      },
+      {
+        "value": "M",
+        "label": "Medium",
+        "explanation": "Losing this property would have a serious adverse effect."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "Losing this property would have a limited adverse effect."
+      }
+    ],
+    "group": 2
+  },
+  {
+    "key": "MAV",
+    "name": "Modified attack vector",
+    "question": "Assess this metric for your deployment. Where can the attacker reach the vulnerable component?",
+    "options": [
+      {
+        "value": "X",
+        "label": "Use base",
+        "explanation": "Use the corresponding Base metric. No environmental override is applied."
+      },
+      {
+        "value": "N",
+        "label": "Network",
+        "explanation": "The component can be attacked remotely across a network, potentially over the internet."
+      },
+      {
+        "value": "A",
+        "label": "Adjacent",
+        "explanation": "The attacker must share a restricted network context, such as the same local subnet or Bluetooth range."
+      },
+      {
+        "value": "L",
+        "label": "Local",
+        "explanation": "The attacker needs local access or must cause a user to interact with a locally delivered payload."
+      },
+      {
+        "value": "P",
+        "label": "Physical",
+        "explanation": "The attacker must physically touch or manipulate the vulnerable system."
+      }
+    ],
+    "group": 2
+  },
+  {
+    "key": "MAC",
+    "name": "Modified attack complexity",
+    "question": "Assess this metric for your deployment. Must the attacker overcome a security measure?",
+    "options": [
+      {
+        "value": "X",
+        "label": "Use base",
+        "explanation": "Use the corresponding Base metric. No environmental override is applied."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "No special action is needed to evade or overcome a security mechanism."
+      },
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "The attacker must evade or overcome a security mechanism, such as address randomization or obtaining a target-specific secret."
+      }
+    ],
+    "group": 2
+  },
+  {
+    "key": "MAT",
+    "name": "Modified attack requirements",
+    "question": "Assess this metric for your deployment. Does success depend on a particular deployment or execution condition?",
+    "options": [
+      {
+        "value": "X",
+        "label": "Use base",
+        "explanation": "Use the corresponding Base metric. No environmental override is applied."
+      },
+      {
+        "value": "N",
+        "label": "None",
+        "explanation": "No particular deployment or execution condition is required for exploitation."
+      },
+      {
+        "value": "P",
+        "label": "Present",
+        "explanation": "Success depends on conditions outside the attacker’s control, such as a race or an on-path position."
+      }
+    ],
+    "group": 2
+  },
+  {
+    "key": "MPR",
+    "name": "Modified privileges required",
+    "question": "Assess this metric for your deployment. What access must the attacker already have?",
+    "options": [
+      {
+        "value": "X",
+        "label": "Use base",
+        "explanation": "Use the corresponding Base metric. No environmental override is applied."
+      },
+      {
+        "value": "N",
+        "label": "None",
+        "explanation": "No authenticated privileges are needed before the attack."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "The attacker needs basic user privileges, usually limited to their own settings or resources."
+      },
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "The attacker needs significant administrative or equivalent control before exploitation."
+      }
+    ],
+    "group": 2
+  },
+  {
+    "key": "MUI",
+    "name": "Modified user interaction",
+    "question": "Assess this metric for your deployment. What must someone other than the attacker do?",
+    "options": [
+      {
+        "value": "X",
+        "label": "Use base",
+        "explanation": "Use the corresponding Base metric. No environmental override is applied."
+      },
+      {
+        "value": "N",
+        "label": "None",
+        "explanation": "The attack succeeds without another person taking action."
+      },
+      {
+        "value": "P",
+        "label": "Passive",
+        "explanation": "A person interacts normally with the system, such as viewing a page or receiving content; no deliberate bypass is needed."
+      },
+      {
+        "value": "A",
+        "label": "Active",
+        "explanation": "A person must take a specific conscious action, such as importing a file or overriding a warning."
+      }
+    ],
+    "group": 2
+  },
+  {
+    "key": "MVC",
+    "name": "Modified confidentiality · vulnerable system",
+    "question": "Assess this metric for your deployment. Can the attacker read protected information? Assess the vulnerable system.",
+    "options": [
+      {
+        "value": "X",
+        "label": "Use base",
+        "explanation": "Use the corresponding Base metric. No environmental override is applied."
+      },
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "All information can be exposed, or the exposed information has a direct, serious consequence."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "Some restricted information is exposed, but the attacker has limited control over what is revealed."
+      },
+      {
+        "value": "N",
+        "label": "None",
+        "explanation": "There is no confidentiality impact on the vulnerable system."
+      }
+    ],
+    "group": 2
+  },
+  {
+    "key": "MVI",
+    "name": "Modified integrity · vulnerable system",
+    "question": "Assess this metric for your deployment. Can the attacker change protected information? Assess the vulnerable system.",
+    "options": [
+      {
+        "value": "X",
+        "label": "Use base",
+        "explanation": "Use the corresponding Base metric. No environmental override is applied."
+      },
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "The attacker can change any information, or the modification has a direct, serious consequence."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "Some information can be changed, but the scope or consequences are limited."
+      },
+      {
+        "value": "N",
+        "label": "None",
+        "explanation": "There is no integrity impact on the vulnerable system."
+      }
+    ],
+    "group": 2
+  },
+  {
+    "key": "MVA",
+    "name": "Modified availability · vulnerable system",
+    "question": "Assess this metric for your deployment. Can the attacker interrupt access to the system? Assess the vulnerable system.",
+    "options": [
+      {
+        "value": "X",
+        "label": "Use base",
+        "explanation": "Use the corresponding Base metric. No environmental override is applied."
+      },
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "Access can be fully denied, or the disruption has a direct, serious consequence."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "Performance or access is reduced, but the system remains at least partially available."
+      },
+      {
+        "value": "N",
+        "label": "None",
+        "explanation": "There is no availability impact on the vulnerable system."
+      }
+    ],
+    "group": 2
+  },
+  {
+    "key": "MSC",
+    "name": "Modified confidentiality · subsequent system",
+    "question": "Assess this metric for your deployment. Can the attacker read protected information? Assess the subsequent system.",
+    "options": [
+      {
+        "value": "X",
+        "label": "Use base",
+        "explanation": "Use the corresponding Base metric. No environmental override is applied."
+      },
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "All information can be exposed, or the exposed information has a direct, serious consequence."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "Some restricted information is exposed, but the attacker has limited control over what is revealed."
+      },
+      {
+        "value": "N",
+        "label": "None",
+        "explanation": "There is no confidentiality impact on the subsequent system."
+      }
+    ],
+    "group": 2
+  },
+  {
+    "key": "MSI",
+    "name": "Modified integrity · subsequent system",
+    "question": "Assess this metric for your deployment. Can the attacker change protected information? Assess the subsequent system.",
+    "options": [
+      {
+        "value": "X",
+        "label": "Use base",
+        "explanation": "Use the corresponding Base metric. No environmental override is applied."
+      },
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "The attacker can change any information, or the modification has a direct, serious consequence."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "Some information can be changed, but the scope or consequences are limited."
+      },
+      {
+        "value": "N",
+        "label": "None",
+        "explanation": "There is no integrity impact on the subsequent system."
+      },
+      {
+        "value": "S",
+        "label": "Safety",
+        "explanation": "An impact on human safety is possible in this environment, including serious injury or worse."
+      }
+    ],
+    "group": 2
+  },
+  {
+    "key": "MSA",
+    "name": "Modified availability · subsequent system",
+    "question": "Assess this metric for your deployment. Can the attacker interrupt access to the system? Assess the subsequent system.",
+    "options": [
+      {
+        "value": "X",
+        "label": "Use base",
+        "explanation": "Use the corresponding Base metric. No environmental override is applied."
+      },
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "Access can be fully denied, or the disruption has a direct, serious consequence."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "Performance or access is reduced, but the system remains at least partially available."
+      },
+      {
+        "value": "N",
+        "label": "None",
+        "explanation": "There is no availability impact on the subsequent system."
+      },
+      {
+        "value": "S",
+        "label": "Safety",
+        "explanation": "An impact on human safety is possible in this environment, including serious injury or worse."
+      }
+    ],
+    "group": 2
+  },
+  {
+    "key": "S",
+    "name": "Safety",
+    "question": "Could exploitation affect human safety?",
+    "options": [
+      {
+        "value": "X",
+        "label": "Not defined",
+        "explanation": "No safety assessment is supplied."
+      },
+      {
+        "value": "N",
+        "label": "Negligible",
+        "explanation": "No material human safety consequence is expected."
+      },
+      {
+        "value": "P",
+        "label": "Present",
+        "explanation": "Human safety consequences are possible. This supplemental value does not change the score."
+      }
+    ],
+    "group": 3
+  },
+  {
+    "key": "AU",
+    "name": "Automatable",
+    "question": "Can an attacker automate the full attack chain?",
+    "options": [
+      {
+        "value": "X",
+        "label": "Not defined",
+        "explanation": "Automation has not been assessed."
+      },
+      {
+        "value": "N",
+        "label": "No",
+        "explanation": "The attacker cannot reliably automate reconnaissance, weaponization, delivery, and exploitation."
+      },
+      {
+        "value": "Y",
+        "label": "Yes",
+        "explanation": "The full attack chain can be automated across multiple targets."
+      }
+    ],
+    "group": 3
+  },
+  {
+    "key": "R",
+    "name": "Recovery",
+    "question": "How does the system recover after an attack?",
+    "options": [
+      {
+        "value": "X",
+        "label": "Not defined",
+        "explanation": "Recovery has not been assessed."
+      },
+      {
+        "value": "A",
+        "label": "Automatic",
+        "explanation": "The system recovers automatically without user or administrator intervention."
+      },
+      {
+        "value": "U",
+        "label": "User",
+        "explanation": "A user or administrator must intervene to restore operation."
+      },
+      {
+        "value": "I",
+        "label": "Irrecoverable",
+        "explanation": "Recovery is not possible through normal restoration; replacement or rebuilding is needed."
+      }
+    ],
+    "group": 3
+  },
+  {
+    "key": "V",
+    "name": "Value density",
+    "question": "How concentrated is the value exposed by an attack?",
+    "options": [
+      {
+        "value": "X",
+        "label": "Not defined",
+        "explanation": "Value concentration has not been assessed."
+      },
+      {
+        "value": "D",
+        "label": "Diffuse",
+        "explanation": "The affected component holds relatively little value per successful attack."
+      },
+      {
+        "value": "C",
+        "label": "Concentrated",
+        "explanation": "A single successful attack gives access to a significant concentration of resources or value."
+      }
+    ],
+    "group": 3
+  },
+  {
+    "key": "RE",
+    "name": "Response effort",
+    "question": "How much effort does initial response require?",
+    "options": [
+      {
+        "value": "X",
+        "label": "Not defined",
+        "explanation": "Response effort has not been assessed."
+      },
+      {
+        "value": "L",
+        "label": "Low",
+        "explanation": "Initial response needs little effort or resources."
+      },
+      {
+        "value": "M",
+        "label": "Moderate",
+        "explanation": "Initial response needs some substantial effort or resources."
+      },
+      {
+        "value": "H",
+        "label": "High",
+        "explanation": "Initial response needs significant, extensive effort or resources."
+      }
+    ],
+    "group": 3
+  },
+  {
+    "key": "U",
+    "name": "Provider urgency",
+    "question": "What urgency has the vulnerability provider communicated? These labels are provider-defined, not standardized deadlines or CVSS severity bands.",
+    "options": [
+      {
+        "value": "X",
+        "label": "Not defined",
+        "explanation": "No provider urgency is supplied."
+      },
+      {
+        "value": "Clear",
+        "label": "Clear",
+        "explanation": "The provider assigns the Clear urgency designation."
+      },
+      {
+        "value": "Green",
+        "label": "Green",
+        "explanation": "The provider assigns the Green urgency designation."
+      },
+      {
+        "value": "Amber",
+        "label": "Amber",
+        "explanation": "The provider assigns the Amber urgency designation."
+      },
+      {
+        "value": "Red",
+        "label": "Red",
+        "explanation": "The provider assigns the Red urgency designation."
+      }
+    ],
+    "group": 3
+  }
+]

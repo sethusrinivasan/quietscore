@@ -1,0 +1,10 @@
+const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert/strict');
+const root=path.resolve(__dirname,'..');const context={TextEncoder,TextDecoder,document:{getElementById(){return {}}}};
+vm.runInNewContext(fs.readFileSync(path.join(root,'bridge.js'),'utf8').split("root.addEventListener('submit'")[0]+';this.extractFile=extractFile;',context);
+const vector='CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N';
+assert.equal(context.extractFile(JSON.stringify({format:'quiet-cvss',schemaVersion:1,cvssVersion:'4.0',vector,score:99}),'assessment.json'),vector);
+assert.equal(context.extractFile('Report\r\n'+vector+'\r\nScore: 7.6\r\n','assessment.txt'),vector);
+for(const [data,name]of [['{','a.json'],['{}','a.json'],[JSON.stringify({format:'quiet-cvss',schemaVersion:2,vector}),'a.json'],['No vector','a.txt'],[vector+'\n'+vector,'a.txt']])assert.throws(()=>context.extractFile(data,name));
+const html=fs.readFileSync(path.join(root,'dist/index.html'),'utf8');assert.equal(html,fs.readFileSync(path.join(root,'dist/quiet-cvss-offline.html'),'utf8'));
+const script=html.match(/<script type="module">([\s\S]*?)<\/script>/)[1];const hash=require('crypto').createHash('sha256').update(script).digest('base64');assert.ok(html.includes('sha256-'+hash));assert.ok(html.includes("connect-src 'none'"));assert.ok(!/<script[^>]*\ssrc=/.test(html));
+console.log('File envelopes: valid JSON/text accepted; 5 invalid files rejected. Offline bundle and CSP hash verified.');
