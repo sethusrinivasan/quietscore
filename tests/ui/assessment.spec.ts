@@ -164,13 +164,11 @@ test('all export controls have decorative icons; themes and keyboard tabs remain
 test('malformed JSON import reports an error and retains the valid vector', async ({ page }) => {
   await start(page);
   await apply(page);
-  await page
-    .locator('#file-input')
-    .setInputFiles({
-      name: 'broken.json',
-      mimeType: 'application/json',
-      buffer: Buffer.from('{invalid json'),
-    });
+  await page.locator('#file-input').setInputFiles({
+    name: 'broken.json',
+    mimeType: 'application/json',
+    buffer: Buffer.from('{invalid json'),
+  });
   await expect(page.locator('#toast')).toContainText('JSON');
   await expect(page.locator('.score')).toContainText('7.6');
   await expect(page.locator('.result-vector code')).toContainText(vector);
