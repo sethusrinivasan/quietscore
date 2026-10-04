@@ -18,6 +18,8 @@ export function createEngine(module: WebAssembly.Module): EngineCall {
     new Uint8Array(engine.memory.buffer, engine.input_ptr(), bytes.length).set(bytes);
     const size = engine.run(action, bytes.length);
     if (!size) throw new Error('Scoring engine failed.');
-    return JSON.parse(decoder.decode(new Uint8Array(engine.memory.buffer, engine.output_ptr(), size))) as EngineResult;
+    return JSON.parse(
+      decoder.decode(new Uint8Array(engine.memory.buffer, engine.output_ptr(), size)),
+    ) as EngineResult;
   };
 }

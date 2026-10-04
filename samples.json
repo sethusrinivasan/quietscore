@@ -1,0 +1,3151 @@
+[
+  {
+    "id": "CVE-2026-88771",
+    "title": "NetScaler remote command execution",
+    "published": "2026-09-27",
+    "verified": "2026-10-04",
+    "score": 9.5,
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+    "scorer": "NetScaler CNA",
+    "kind": "Published CNA CVSS 4.0 score",
+    "lesson": "Attack Requirements Present is distinct from high Attack Complexity.",
+    "sources": [
+      {
+        "label": "NetScaler CNA score / CVE Program",
+        "url": "https://www.cve.org/CVERecord?id=CVE-2026-88771"
+      },
+      {
+        "label": "Maintainer advisory / fix",
+        "url": "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+      }
+    ],
+    "recordUrl": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/88xxx/CVE-2026-88771.json",
+    "metricContext": {
+      "AV": {
+        "value": "N",
+        "text": "Remote requests reach the NetScaler appliance.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "AC": {
+        "value": "L",
+        "text": "The published vector selects L; no metric-specific rationale is provided. Read the prerequisite and mitigation sections before adapting it.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "AT": {
+        "value": "P",
+        "text": "Published Present, although the bulletin says default deployments need no extra feature. The specific execution condition is not explained; do not invent one.",
+        "status": "Source discrepancy",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "PR": {
+        "value": "N",
+        "text": "The advisory describes an unauthenticated command-execution path.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "UI": {
+        "value": "N",
+        "text": "The published vector specifies no victim action.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "VC": {
+        "value": "H",
+        "text": "Scoring interpretation: arbitrary commands expose appliance-accessible data.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "VI": {
+        "value": "H",
+        "text": "Scoring interpretation: arbitrary commands permit appliance changes.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "VA": {
+        "value": "H",
+        "text": "Scoring interpretation: arbitrary commands can disrupt the appliance.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "SC": {
+        "value": "H",
+        "text": "The vector assigns High subsequent confidentiality; the bulletin does not explain the affected boundary.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "SI": {
+        "value": "H",
+        "text": "The vector assigns High subsequent integrity; the bulletin does not explain the affected boundary.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "SA": {
+        "value": "H",
+        "text": "The vector assigns High subsequent availability; the bulletin does not explain the affected boundary.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "E": {
+        "value": "X",
+        "text": "Exploit maturity is not explicitly set in this vector. CVSS uses its default; this is not evidence of absent exploitation. Review dated threat evidence for your clone.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "CR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "IR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "AR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "MAV": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "MAC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "MAT": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "MPR": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "MUI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "MVC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "MVI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "MVA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "MSC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "MSI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "MSA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "S": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "AU": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "R": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "V": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "RE": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      },
+      "U": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88771",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
+        ]
+      }
+    },
+    "contextVerified": "2026-10-04",
+    "caveat": "The bulletin preserves AT:P but describes default deployments as affected without extra features; it does not explain the specific attack requirement."
+  },
+  {
+    "id": "CVE-2026-88775",
+    "title": "NetScaler memory overflow",
+    "published": "2026-09-27",
+    "verified": "2026-10-04",
+    "score": 8.8,
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:H/SC:N/SI:N/SA:N",
+    "scorer": "NetScaler CNA",
+    "kind": "Published CNA CVSS 4.0 score",
+    "lesson": "High availability impact does not require high confidentiality or integrity impact.",
+    "sources": [
+      {
+        "label": "NetScaler CNA score / CVE Program",
+        "url": "https://www.cve.org/CVERecord?id=CVE-2026-88775"
+      },
+      {
+        "label": "Maintainer advisory / fix",
+        "url": "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+      }
+    ],
+    "recordUrl": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/88xxx/CVE-2026-88775.json",
+    "metricContext": {
+      "AV": {
+        "value": "N",
+        "text": "Network traffic reaches a Gateway or AAA virtual server.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "AC": {
+        "value": "L",
+        "text": "The published vector selects L; no metric-specific rationale is provided. Read the prerequisite and mitigation sections before adapting it.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "AT": {
+        "value": "N",
+        "text": "Published None. Gateway or AAA configuration determines applicability, but no further execution requirement is explained.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "PR": {
+        "value": "N",
+        "text": "The published vector specifies no authenticated attacker privileges.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "UI": {
+        "value": "N",
+        "text": "The published vector specifies no victim interaction.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "VC": {
+        "value": "L",
+        "text": "The source scores confidentiality Low; its bulletin gives no separate data-exposure account.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "VI": {
+        "value": "L",
+        "text": "The source scores integrity Low; its bulletin gives no separate modification account.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "VA": {
+        "value": "H",
+        "text": "Memory overflow can cause erroneous behavior or denial of service.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "SC": {
+        "value": "N",
+        "text": "The published scenario assigns no separate subsequent-system impact. This is a scoring boundary, not proof that connected systems cannot be affected.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "SI": {
+        "value": "N",
+        "text": "The published scenario assigns no separate subsequent-system impact. This is a scoring boundary, not proof that connected systems cannot be affected.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "SA": {
+        "value": "N",
+        "text": "The published scenario assigns no separate subsequent-system impact. This is a scoring boundary, not proof that connected systems cannot be affected.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "E": {
+        "value": "X",
+        "text": "Exploit maturity is not explicitly set in this vector. CVSS uses its default; this is not evidence of absent exploitation. Review dated threat evidence for your clone.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "CR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "IR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "AR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "MAV": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "MAC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "MAT": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "MPR": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "MUI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "MVC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "MVI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "MVA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "MSC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "MSI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "MSA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "S": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "AU": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "R": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "V": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "RE": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      },
+      "U": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-88775",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778"
+        ]
+      }
+    },
+    "contextVerified": "2026-10-04"
+  },
+  {
+    "id": "CVE-2026-56705",
+    "title": "Adminer database connection injection",
+    "published": "2026-08-25",
+    "verified": "2026-10-04",
+    "score": 9.3,
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+    "scorer": "VulnCheck CNA",
+    "kind": "Published CNA CVSS 4.0 score",
+    "lesson": "A database administration interface can become a remote execution path.",
+    "sources": [
+      {
+        "label": "VulnCheck CNA score / CVE Program",
+        "url": "https://www.cve.org/CVERecord?id=CVE-2026-56705"
+      },
+      {
+        "label": "Maintainer advisory / fix",
+        "url": "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+      }
+    ],
+    "recordUrl": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/56xxx/CVE-2026-56705.json",
+    "metricContext": {
+      "AV": {
+        "value": "N",
+        "text": "The exposed Adminer login interface accepts the database-server field.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "AC": {
+        "value": "L",
+        "text": "The published vector selects L; no metric-specific rationale is provided. Read the prerequisite and mitigation sections before adapting it.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "AT": {
+        "value": "N",
+        "text": "Published None; the advisory also requires SQL Server drivers and a writable web root. These prerequisites are documented, but the scorer gives no AT rationale.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "PR": {
+        "value": "N",
+        "text": "ODBC tracing occurs before a successful database login.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "UI": {
+        "value": "N",
+        "text": "The attacker submits the request and accesses the resulting file.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "VC": {
+        "value": "H",
+        "text": "Scoring interpretation: server-side code execution exposes accessible data.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "VI": {
+        "value": "H",
+        "text": "Injected ODBC options permit writing a server-side code file.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "VA": {
+        "value": "H",
+        "text": "Scoring interpretation: execution under the web process can disrupt its service.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "SC": {
+        "value": "N",
+        "text": "The published scenario assigns no separate subsequent-system impact. This is a scoring boundary, not proof that connected systems cannot be affected.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "SI": {
+        "value": "N",
+        "text": "The published scenario assigns no separate subsequent-system impact. This is a scoring boundary, not proof that connected systems cannot be affected.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "SA": {
+        "value": "N",
+        "text": "The published scenario assigns no separate subsequent-system impact. This is a scoring boundary, not proof that connected systems cannot be affected.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "E": {
+        "value": "X",
+        "text": "Exploit maturity is not explicitly set in this vector. CVSS uses its default; this is not evidence of absent exploitation. Review dated threat evidence for your clone.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "CR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "IR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "AR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "MAV": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "MAC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "MAT": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "MPR": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "MUI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "MVC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "MVI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "MVA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "MSC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "MSI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "MSA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "S": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "AU": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "R": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "V": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "RE": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      },
+      "U": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-56705",
+          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
+        ]
+      }
+    },
+    "contextVerified": "2026-10-04"
+  },
+  {
+    "id": "CVE-2026-18751",
+    "title": "Citrix Workspace for Mac file-path control",
+    "published": "2026-08-18",
+    "verified": "2026-10-04",
+    "score": 5.2,
+    "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:A/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N",
+    "scorer": "Citrix CNA",
+    "kind": "Published CNA CVSS 4.0 score",
+    "lesson": "Local access, existing privileges, and active user interaction change severity.",
+    "sources": [
+      {
+        "label": "Citrix CNA score / CVE Program",
+        "url": "https://www.cve.org/CVERecord?id=CVE-2026-18751"
+      },
+      {
+        "label": "Maintainer advisory / fix",
+        "url": "https://support.citrix.com/external/article/CTX696911"
+      }
+    ],
+    "recordUrl": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/18xxx/CVE-2026-18751.json",
+    "metricContext": {
+      "AV": {
+        "value": "L",
+        "text": "The attacker needs access to the Mac running Workspace.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "AC": {
+        "value": "L",
+        "text": "The published vector selects L; no metric-specific rationale is provided. Read the prerequisite and mitigation sections before adapting it.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "AT": {
+        "value": "N",
+        "text": "The published vector selects N; no metric-specific rationale is provided. Read the prerequisite and mitigation sections before adapting it.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "PR": {
+        "value": "L",
+        "text": "The bulletin requires an authenticated local user.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "UI": {
+        "value": "A",
+        "text": "Published Active; the bulletin does not identify the exact required victim action.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "VC": {
+        "value": "N",
+        "text": "The vector assigns no confidentiality impact; the described issue is file modification.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "VI": {
+        "value": "H",
+        "text": "The advisory describes arbitrary modification of root-owned files.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "VA": {
+        "value": "H",
+        "text": "Scoring interpretation: privileged file modification can disrupt the local system.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "SC": {
+        "value": "N",
+        "text": "The published scenario assigns no separate subsequent-system impact. This is a scoring boundary, not proof that connected systems cannot be affected.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "SI": {
+        "value": "N",
+        "text": "The published scenario assigns no separate subsequent-system impact. This is a scoring boundary, not proof that connected systems cannot be affected.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "SA": {
+        "value": "N",
+        "text": "The published scenario assigns no separate subsequent-system impact. This is a scoring boundary, not proof that connected systems cannot be affected.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "E": {
+        "value": "X",
+        "text": "Exploit maturity is not explicitly set in this vector. CVSS uses its default; this is not evidence of absent exploitation. Review dated threat evidence for your clone.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "CR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "IR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "AR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "MAV": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "MAC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "MAT": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "MPR": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "MUI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "MVC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "MVI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "MVA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "MSC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "MSI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "MSA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "S": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "AU": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "R": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "V": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "RE": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      },
+      "U": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-18751",
+          "https://support.citrix.com/external/article/CTX696911"
+        ]
+      }
+    },
+    "contextVerified": "2026-10-04"
+  },
+  {
+    "id": "CVE-2026-42903",
+    "title": "Windows Kerberos denial of service",
+    "published": "2026-06-09",
+    "verified": "2026-10-04",
+    "score": 7.1,
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+    "scorer": "FIRST worked example",
+    "kind": "Published CVSS 4.0 example",
+    "lesson": "Domain authentication counts as Low privileges even without access to the domain controller.",
+    "sources": [
+      {
+        "label": "FIRST worked example",
+        "url": "https://www.first.org/cvss/v4.0/examples"
+      },
+      {
+        "label": "CVE Program record",
+        "url": "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+      },
+      {
+        "label": "Maintainer advisory / fix",
+        "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42903"
+      }
+    ],
+    "recordUrl": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/42xxx/CVE-2026-42903.json",
+    "metricContext": {
+      "AV": {
+        "value": "N",
+        "text": "The Kerberos service receives requests across the network.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "AC": {
+        "value": "L",
+        "text": "The published vector selects L; no metric-specific rationale is provided. Read the prerequisite and mitigation sections before adapting it.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "AT": {
+        "value": "N",
+        "text": "The published vector selects N; no metric-specific rationale is provided. Read the prerequisite and mitigation sections before adapting it.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "PR": {
+        "value": "L",
+        "text": "Domain credentials are required, even without privileges on the domain controller.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "UI": {
+        "value": "N",
+        "text": "The authenticated attacker sends requests without victim interaction.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "VC": {
+        "value": "N",
+        "text": "The published scenario concerns disruption rather than reading secrets.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "VI": {
+        "value": "N",
+        "text": "The published scenario concerns disruption rather than changing records.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "VA": {
+        "value": "H",
+        "text": "A null-pointer error can deny the Kerberos service.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "SC": {
+        "value": "N",
+        "text": "The published scenario assigns no separate subsequent-system impact. This is a scoring boundary, not proof that connected systems cannot be affected.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "SI": {
+        "value": "N",
+        "text": "The published scenario assigns no separate subsequent-system impact. This is a scoring boundary, not proof that connected systems cannot be affected.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "SA": {
+        "value": "N",
+        "text": "The published scenario assigns no separate subsequent-system impact. This is a scoring boundary, not proof that connected systems cannot be affected.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "E": {
+        "value": "X",
+        "text": "Exploit maturity is not explicitly set in this vector. CVSS uses its default; this is not evidence of absent exploitation. Review dated threat evidence for your clone.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "CR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "IR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "AR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "MAV": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "MAC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "MAT": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "MPR": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "MUI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "MVC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "MVI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "MVA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "MSC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "MSI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "MSA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "S": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "AU": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "R": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "V": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "RE": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      },
+      "U": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-42903"
+        ]
+      }
+    },
+    "contextVerified": "2026-10-04"
+  },
+  {
+    "id": "CVE-2026-48172",
+    "title": "LiteSpeed cPanel privilege escalation",
+    "published": "2026-05-21",
+    "verified": "2026-10-04",
+    "score": 10,
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+    "scorer": "mitre CNA",
+    "kind": "Published CNA CVSS 4.0 score",
+    "lesson": "A management component can also affect the systems it controls.",
+    "sources": [
+      {
+        "label": "mitre CNA score / CVE Program",
+        "url": "https://www.cve.org/CVERecord?id=CVE-2026-48172"
+      },
+      {
+        "label": "Maintainer advisory / fix",
+        "url": "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+      }
+    ],
+    "recordUrl": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/48xxx/CVE-2026-48172.json",
+    "metricContext": {
+      "AV": {
+        "value": "N",
+        "text": "The user-end cPanel plugin exposes a server administration operation.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "AC": {
+        "value": "L",
+        "text": "The published vector selects L; no metric-specific rationale is provided. Read the prerequisite and mitigation sections before adapting it.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "AT": {
+        "value": "N",
+        "text": "The published vector selects N; no metric-specific rationale is provided. Read the prerequisite and mitigation sections before adapting it.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "PR": {
+        "value": "N",
+        "text": "Discrepancy: the published vector says None; LiteSpeed describes a cPanel user account. Preserve the vector and review this boundary in a clone.",
+        "status": "Source discrepancy",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "UI": {
+        "value": "N",
+        "text": "The attacker invokes the vulnerable operation; no separate victim action is described.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "VC": {
+        "value": "H",
+        "text": "Root execution exposes the hosting server\u2019s protected data.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "VI": {
+        "value": "H",
+        "text": "Root execution permits privileged server changes.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "VA": {
+        "value": "H",
+        "text": "Root execution can disrupt the hosting server.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "SC": {
+        "value": "H",
+        "text": "Scoring interpretation: the published vector includes managed-site confidentiality impact.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "SI": {
+        "value": "H",
+        "text": "Scoring interpretation: the published vector includes managed-site integrity impact.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "SA": {
+        "value": "H",
+        "text": "Scoring interpretation: the published vector includes managed-site availability impact.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "E": {
+        "value": "X",
+        "text": "Exploit maturity is not explicitly set in this vector. CVSS uses its default; this is not evidence of absent exploitation. Review dated threat evidence for your clone.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "CR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "IR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "AR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "MAV": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "MAC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "MAT": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "MPR": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "MUI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "MVC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "MVI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "MVA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "MSC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "MSI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "MSA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "S": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "AU": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "R": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "V": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "RE": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      },
+      "U": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+        ]
+      }
+    },
+    "contextVerified": "2026-10-04",
+    "caveat": "Published PR:N differs from the vendor account prerequisite (any cPanel user)."
+  },
+  {
+    "id": "CVE-2026-31431",
+    "title": "Linux kernel CopyFail",
+    "published": "2026-04-22",
+    "verified": "2026-10-04",
+    "score": 8.5,
+    "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+    "scorer": "FIRST worked example",
+    "kind": "Published CVSS 4.0 example",
+    "lesson": "Compare local privilege escalation with a documented environmental mitigation.",
+    "sources": [
+      {
+        "label": "FIRST worked example",
+        "url": "https://www.first.org/cvss/v4.0/examples"
+      },
+      {
+        "label": "CVE Program record",
+        "url": "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+      },
+      {
+        "label": "Maintainer advisory / fix",
+        "url": "https://git.kernel.org/stable/c/893d22e0135fa394db81df88697fba6032747667"
+      }
+    ],
+    "recordUrl": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/31xxx/CVE-2026-31431.json",
+    "caveat": "FIRST\u2019s comparison table gives 8.5; a nearby heading says 10.0. This sample uses the table/vector, independently recalculated as 8.5.",
+    "variation": {
+      "label": "Documented mitigation applied (FIRST)",
+      "score": 0,
+      "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:A/MVC:N/MVI:N/MVA:N"
+    },
+    "metricContext": {
+      "AV": {
+        "value": "L",
+        "text": "Exploitation begins on the local Linux host.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "AC": {
+        "value": "L",
+        "text": "The published vector selects L; no metric-specific rationale is provided. Read the prerequisite and mitigation sections before adapting it.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "AT": {
+        "value": "N",
+        "text": "The published vector selects N; no metric-specific rationale is provided. Read the prerequisite and mitigation sections before adapting it.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "PR": {
+        "value": "L",
+        "text": "A basic local account is the starting point for escalation.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "UI": {
+        "value": "N",
+        "text": "No additional victim action is included.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "VC": {
+        "value": "H",
+        "text": "Root escalation exposes protected host data.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "VI": {
+        "value": "H",
+        "text": "Root escalation permits privileged host changes.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "VA": {
+        "value": "H",
+        "text": "Root escalation permits host disruption.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "SC": {
+        "value": "N",
+        "text": "The published scenario assigns no separate subsequent-system impact. This is a scoring boundary, not proof that connected systems cannot be affected.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "SI": {
+        "value": "N",
+        "text": "The published scenario assigns no separate subsequent-system impact. This is a scoring boundary, not proof that connected systems cannot be affected.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "SA": {
+        "value": "N",
+        "text": "The published scenario assigns no separate subsequent-system impact. This is a scoring boundary, not proof that connected systems cannot be affected.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "E": {
+        "value": "X",
+        "text": "Exploit maturity is not explicitly set in this vector. CVSS uses its default; this is not evidence of absent exploitation. Review dated threat evidence for your clone.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "CR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "IR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "AR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "MAV": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "MAC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "MAT": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "MPR": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "MUI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "MVC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "MVI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "MVA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "MSC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "MSI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "MSA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "S": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "AU": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "R": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "V": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "RE": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      },
+      "U": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://www.cve.org/CVERecord?id=CVE-2026-31431"
+        ]
+      }
+    },
+    "contextVerified": "2026-10-04"
+  },
+  {
+    "id": "CVE-2026-39987",
+    "title": "marimo notebook authentication bypass",
+    "published": "2026-04-09",
+    "verified": "2026-10-04",
+    "score": 9.3,
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+    "scorer": "GitHub_M CNA",
+    "kind": "Published CNA CVSS 4.0 score",
+    "lesson": "A missing check on one notebook endpoint can expose the whole host.",
+    "sources": [
+      {
+        "label": "GitHub_M CNA score / CVE Program",
+        "url": "https://www.cve.org/CVERecord?id=CVE-2026-39987"
+      },
+      {
+        "label": "Maintainer advisory / fix",
+        "url": "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+      }
+    ],
+    "recordUrl": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/39xxx/CVE-2026-39987.json",
+    "metricContext": {
+      "AV": {
+        "value": "N",
+        "text": "The terminal WebSocket endpoint is accessible across the network.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "AC": {
+        "value": "L",
+        "text": "The published vector selects L; no metric-specific rationale is provided. Read the prerequisite and mitigation sections before adapting it.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "AT": {
+        "value": "N",
+        "text": "Published None; the terminal code checks edit mode and platform support. The source does not explain the scoring treatment of these prerequisites.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "PR": {
+        "value": "N",
+        "text": "The terminal endpoint omits the authentication check used by other endpoints.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "UI": {
+        "value": "N",
+        "text": "The advisory states that victim interaction is unnecessary.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "VC": {
+        "value": "H",
+        "text": "An interactive shell exposes data available to the server process.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "VI": {
+        "value": "H",
+        "text": "The shell permits server-process changes; default Docker execution may be root.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "VA": {
+        "value": "H",
+        "text": "Scoring interpretation: the shell can terminate or disrupt the service.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "SC": {
+        "value": "N",
+        "text": "The published scenario assigns no separate subsequent-system impact. This is a scoring boundary, not proof that connected systems cannot be affected.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "SI": {
+        "value": "N",
+        "text": "The published scenario assigns no separate subsequent-system impact. This is a scoring boundary, not proof that connected systems cannot be affected.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "SA": {
+        "value": "N",
+        "text": "The published scenario assigns no separate subsequent-system impact. This is a scoring boundary, not proof that connected systems cannot be affected.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "E": {
+        "value": "X",
+        "text": "Exploit maturity is not explicitly set in this vector. CVSS uses its default; this is not evidence of absent exploitation. Review dated threat evidence for your clone.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "CR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "IR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "AR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "MAV": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "MAC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "MAT": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "MPR": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "MUI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "MVC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "MVI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "MVA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "MSC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "MSI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "MSA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "S": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "AU": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "R": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "V": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "RE": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      },
+      "U": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-39987",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      }
+    },
+    "contextVerified": "2026-10-04"
+  },
+  {
+    "id": "CVE-2026-1731",
+    "title": "BeyondTrust remote code execution",
+    "published": "2026-02-06",
+    "verified": "2026-10-04",
+    "score": 9.9,
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:L/SI:H/SA:L",
+    "scorer": "BT CNA",
+    "kind": "Published CNA CVSS 4.0 score",
+    "lesson": "Compare vulnerable-system impact with different subsequent-system impacts.",
+    "sources": [
+      {
+        "label": "BT CNA score / CVE Program",
+        "url": "https://www.cve.org/CVERecord?id=CVE-2026-1731"
+      },
+      {
+        "label": "Maintainer advisory / fix",
+        "url": "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+      }
+    ],
+    "recordUrl": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/1xxx/CVE-2026-1731.json",
+    "metricContext": {
+      "AV": {
+        "value": "N",
+        "text": "Specially crafted remote client requests reach the RS/PRA service.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "AC": {
+        "value": "L",
+        "text": "The published vector selects L; no metric-specific rationale is provided. Read the prerequisite and mitigation sections before adapting it.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "AT": {
+        "value": "N",
+        "text": "The published vector selects N; no metric-specific rationale is provided. Read the prerequisite and mitigation sections before adapting it.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "PR": {
+        "value": "N",
+        "text": "BeyondTrust describes execution before authentication.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "UI": {
+        "value": "N",
+        "text": "The vector specifies no victim action for these client requests.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "VC": {
+        "value": "H",
+        "text": "The advisory describes unauthorized access and data extraction.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "VI": {
+        "value": "H",
+        "text": "Command execution can modify data under the site user\u2019s privileges.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "VA": {
+        "value": "H",
+        "text": "The advisory describes service disruption.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "SC": {
+        "value": "L",
+        "text": "The source scores subsequent confidentiality Low but gives no detailed system boundary.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "SI": {
+        "value": "H",
+        "text": "The source scores subsequent integrity High but gives no detailed system boundary.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "SA": {
+        "value": "L",
+        "text": "The source scores subsequent availability Low but gives no detailed system boundary.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "E": {
+        "value": "X",
+        "text": "Exploit maturity is not explicitly set in this vector. CVSS uses its default; this is not evidence of absent exploitation. Review dated threat evidence for your clone.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "CR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "IR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "AR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "MAV": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "MAC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "MAT": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "MPR": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "MUI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "MVC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "MVI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "MVA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "MSC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "MSI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "MSA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "S": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "AU": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "R": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "V": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "RE": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      },
+      "U": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.cve.org/CVERecord?id=CVE-2026-1731",
+          "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+        ]
+      }
+    },
+    "contextVerified": "2026-10-04"
+  },
+  {
+    "id": "CVE-2021-44228",
+    "title": "Log4Shell \u00b7 Apache Log4j",
+    "published": "2021-12-10",
+    "verified": "2026-10-04",
+    "score": 9.3,
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:A",
+    "scorer": "FIRST worked example",
+    "kind": "Historical CVSS 4.0 reassessment \u00b7 Base + Threat",
+    "lesson": "A famous 10.0 CVSS 3.1 case becomes 9.3 in FIRST\u2019s CVSS 4.0 scenario; scores across versions are not interchangeable.",
+    "sources": [
+      {
+        "label": "FIRST worked example",
+        "url": "https://www.first.org/cvss/v4.0/examples"
+      },
+      {
+        "label": "Apache Log4j security advisory",
+        "url": "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+      },
+      {
+        "label": "NVD record / original disclosure",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+      }
+    ],
+    "metricContext": {
+      "AV": {
+        "value": "N",
+        "text": "Attacker-controlled data reaches a network service that logs it.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "AC": {
+        "value": "L",
+        "text": "The published vector selects L; no metric-specific rationale is provided. Read the prerequisite and mitigation sections before adapting it.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "AT": {
+        "value": "N",
+        "text": "The published vector selects N; no metric-specific rationale is provided. Read the prerequisite and mitigation sections before adapting it.",
+        "status": "Scoring interpretation / evidence limit",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "PR": {
+        "value": "N",
+        "text": "The logging input can be supplied without signing into the vulnerable service.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "UI": {
+        "value": "N",
+        "text": "The vulnerable logging operation processes input without a victim action.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "VC": {
+        "value": "H",
+        "text": "Command execution exposes service-accessible data.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "VI": {
+        "value": "H",
+        "text": "Command execution permits changes under service privileges.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "VA": {
+        "value": "H",
+        "text": "Command execution can disrupt the service.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "SC": {
+        "value": "N",
+        "text": "FIRST confines impacts to the logging service in this scenario.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "SI": {
+        "value": "N",
+        "text": "FIRST assigns no separate downstream integrity impact.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "SA": {
+        "value": "N",
+        "text": "FIRST assigns no separate downstream availability impact.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "E": {
+        "value": "A",
+        "text": "FIRST uses Attacked for known malicious exploitation.",
+        "status": "Source-supported context",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "CR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "IR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "AR": {
+        "value": "X",
+        "text": "No deployment-specific security requirement is supplied. Document how important this impact is to your organization before changing the default.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "MAV": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "MAC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "MAT": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "MPR": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "MUI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "MVC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "MVI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "MVA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "MSC": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "MSI": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "MSA": {
+        "value": "X",
+        "text": "No environmental override is supplied. The Base classification is inherited; document exposure or mitigation evidence before overriding it.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "S": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "AU": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "R": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "V": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "RE": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      },
+      "U": {
+        "value": "X",
+        "text": "No supplemental assessment is supplied. Leave Not defined unless you have evidence for this context; this metric does not change the score.",
+        "status": "Not supplied / default guidance",
+        "sources": [
+          "https://www.first.org/cvss/v4.0/examples",
+          "https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228"
+        ]
+      }
+    },
+    "contextVerified": "2026-10-04"
+  }
+]
