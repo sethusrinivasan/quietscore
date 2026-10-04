@@ -21,9 +21,11 @@
     "format:check": "prettier --check bridge.js style.css scripts mcp worker tests package.json samples.json README.md docs SECURITY.md PRIVACY.md THIRD_PARTY_NOTICES.md playwright.config.ts && cargo fmt --check && rustfmt --check src/xlsx.rs",
     "test:ui": "node scripts/ui-tests.cjs",
     "test:all": "pnpm test && pnpm test:ui",
-    "test:report": "node scripts/report-tests.cjs"
+    "test:report": "node scripts/report-tests.cjs",
+    "screenshots": "node scripts/screenshots.mjs"
   },
   "dependencies": {
+    "@cloudflare/workers-oauth-provider": "1.2.1",
     "@modelcontextprotocol/server": "2.3.0",
     "zod": "^4.2.0"
   },

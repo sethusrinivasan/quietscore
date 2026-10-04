@@ -13,3 +13,5 @@ generated/
 /playwright-report/
 /test-results/
 /.openai/
+
+.test-build/

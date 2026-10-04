@@ -41,7 +41,15 @@ const files = fs
   .readdirSync(path.join(root, 'tests'))
   .filter((name) => name.endsWith('.test.ts'))
   .map((name) => `tests/${name}`);
-const node = execute('pnpm', ['exec', 'tsx', '--test', '--test-reporter=junit', ...files]);
+const node = execute('pnpm', [
+  'exec',
+  'tsx',
+  '--import',
+  './scripts/cloudflare-test-register.mjs',
+  '--test',
+  '--test-reporter=junit',
+  ...files,
+]);
 const suite = (node.stdout || '').match(/<testsuites\b[^>]*>/)?.[0] || '';
 const commentCount = (key) =>
   Number((node.stdout || '').match(new RegExp(`<!-- ${key} (\\d+) -->`))?.[1] || 0);

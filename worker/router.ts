@@ -20,7 +20,7 @@ function reply(message: string, status: number, extra: HeadersInit = {}): Respon
     },
   });
 }
-async function equalToken(actual: string, expected: string): Promise<boolean> {
+export async function equalToken(actual: string, expected: string): Promise<boolean> {
   const [a, b] = await Promise.all(
     [actual, expected].map((s) => crypto.subtle.digest('SHA-256', encoder.encode(s))),
   );

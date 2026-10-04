@@ -19,3 +19,7 @@ These controls reduce risk; they do not establish a formal security certificatio
 ## Operations
 
 Restrict the deployment token to the target Worker, rotate exposed/revoked credentials, and keep the MCP token separate from Cloudflare deployment credentials. Set secrets through GitHub/Cloudflare secure settings, never chat or source files. Review dependency updates and FIRST provenance changes before merging. Failed tests prevent CI deployment. Revert through Git history or Cloudflare rollback as described in [Deployment](docs/DEPLOYMENT.md).
+
+## Hosted authorization
+
+MCP OAuth uses S256 PKCE, resource-bound tokens, browser-bound consent/state, and expiring grants. Per-client script tokens store hashes only and require authenticated, CSRF-checked management. GitHub upstream credentials never become MCP tokens. KV revocation is eventually consistent. See [Authentication](docs/AUTHENTICATION.md) for lifetimes, migration, and trust boundaries.

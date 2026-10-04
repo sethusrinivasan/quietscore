@@ -3,14 +3,25 @@
   "name": "quietscore",
   "main": "worker/index.ts",
   "compatibility_date": "2026-10-03",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "workers_dev": true,
+  "kv_namespaces": [{ "binding": "OAUTH_KV", "id": "1b26b84a53bd4dd58bbca8aa5b648f1b" }],
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
-    "run_worker_first": ["/mcp", "/mcp/*", "/healthz"],
-    "not_found_handling": "none"
+    "run_worker_first": [
+      "/mcp",
+      "/mcp/*",
+      "/healthz",
+      "/authorize",
+      "/auth/*",
+      "/connect",
+      "/connect/*",
+      "/oauth/*",
+      "/.well-known/*",
+    ],
+    "not_found_handling": "none",
   },
-  "observability": {"enabled": false},
-  "vars": {"ALLOW_PUBLIC_MCP": "false"}
+  "observability": { "enabled": false },
+  "vars": { "ALLOW_PUBLIC_MCP": "false", "PUBLIC_URL": "https://quietscore.cancun.workers.dev" },
 }

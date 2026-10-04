@@ -24,6 +24,30 @@ Browser scoring, drafts, imports, and exports stay on the device. No analytics o
 
 CVSS measures vulnerability severity, not exploitation probability or complete business risk. QuietScore is independent of FIRST and is not certified or endorsed by it.
 
+## Screenshots
+
+Choose a guided assessment, reopen local drafts, or explore published samples.
+
+![QuietScore starting choices](docs/screenshots/start.png)
+
+The wizard explains each classification and captures optional evidence notes.
+
+![Guided scenario with metric notes](docs/screenshots/guided.png)
+
+Published samples include sourced explanations and stay read-only until cloned.
+
+![Log4Shell sample and contextual explanations](docs/screenshots/sample.png)
+
+Severity remains clear in dark mode; export the assessment as JSON, text, PDF, or Excel.
+
+![Dark mode severity and export controls](docs/screenshots/dark-exports.png)
+
+Connect AI clients through OAuth sign-in, or create individual tokens for scripts.
+
+![MCP sign-in and connection setup](docs/screenshots/mcp-connect.png)
+
+Screenshots use public vulnerability data and synthetic notes. Regenerate after UI changes with `pnpm screenshots`.
+
 ## Development
 
 Requires Node 22+, pnpm 10.17.1, Python 3, and rustup. `rust-toolchain.toml` pins Rust and installs the WASM target and rustfmt.
@@ -47,17 +71,18 @@ Test runs report pass rates and emit JUnit, JSON, and browser HTML reports. GitH
 
 ## Deployment and MCP
 
-One Cloudflare Worker with Static Assets serves the project. No databases, queues, storage services, or paid add-ons are required. Static asset requests are free; Worker calls use the account’s plan allowance. Keep the Workers Free plan for a free-first deployment. [Cloudflare billing details](https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/).
+One Cloudflare Worker with Static Assets serves the project. One KV namespace holds authentication records only; no assessment database, queues, or paid add-ons are required. Static asset requests are free; Worker calls use the account’s plan allowance. Keep the Workers Free plan for a free-first deployment. [Cloudflare billing details](https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/).
 
 Every push to `main` triggers build, unit/parity checks, cross-browser tests, bundle validation, deployment, and smoke checks. Pull requests run validation without deployment credentials. Production CI needs `CLOUDFLARE_API_TOKEN` as a repository secret and `CLOUDFLARE_ACCOUNT_ID` as a repository variable. See [Deployment](docs/DEPLOYMENT.md), including token permissions and rollback instructions.
 
-Local MCP: `pnpm mcp:stdio`. Hosted MCP: `https://quietscore.cancun.workers.dev/mcp`, using its separate bearer token. The browser calculator never calls this endpoint.
+Local MCP: `pnpm mcp:stdio`. Hosted MCP: `https://quietscore.cancun.workers.dev/mcp`, using GitHub sign-in with OAuth/PKCE or individual script tokens. [Manage connections](https://quietscore.cancun.workers.dev/connect) · [Authentication setup](docs/AUTHENTICATION.md). The browser calculator never calls this endpoint.
 
 ## Documentation
 
 - [Privacy](PRIVACY.md) and [Security policy](SECURITY.md)
 - [Architecture, design, and interaction flows](docs/DESIGN.md)
 - [Testing and result publication](docs/TESTING.md)
+- [MCP sign-in and token management](docs/AUTHENTICATION.md)
 - [Deployment and operations](docs/DEPLOYMENT.md)
 - [CVSS sources and sample acknowledgments](docs/SOURCES.md)
 

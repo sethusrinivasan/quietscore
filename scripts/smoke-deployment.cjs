@@ -18,6 +18,12 @@ async function verify() {
   const mcp = await fetch(`${origin}/mcp`, { method: 'POST' });
   if (![401, 503].includes(mcp.status))
     throw new Error('Hosted MCP must require authentication or remain disabled.');
+  const discovery = await fetch(`${origin}/.well-known/oauth-protected-resource/mcp`);
+  if (!discovery.ok || (await discovery.json()).resource !== `${origin}/mcp`)
+    throw new Error('MCP OAuth discovery failed.');
+  const connections = await fetch(`${origin}/connect`);
+  if (!connections.ok || !(await connections.text()).includes('Sign in with GitHub'))
+    throw new Error('MCP sign-in page is unavailable.');
   console.log(`Deployment verified: ${origin}`);
   if (process.env.GITHUB_STEP_SUMMARY)
     require('node:fs').appendFileSync(

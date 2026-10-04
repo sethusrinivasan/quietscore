@@ -23,11 +23,11 @@ Do not also enable Workers Builds: use one deployment path. Configure branch-req
 
 ## Free-first footprint
 
-No KV, D1, R2, Durable Objects, queues, cron jobs, paid domains, analytics, or build service is required. Static asset requests are free/unlimited under Cloudflare’s documented billing; Worker/MCP requests consume plan allowances. Use Workers Free and avoid plan upgrades. Exceeding Free limits can interrupt Worker endpoints. GitHub’s public-repository standard Actions runners are free; artifacts expire after seven days. Existing account subscriptions are not changed by this project.
+One KV namespace stores auth records only. No D1, R2, Durable Objects, queues, cron jobs, paid domains, analytics, or build service is required. KV operations consume the plan allowance; exhausted Free quotas can interrupt sign-in and MCP access. Static asset requests are free/unlimited under Cloudflare’s documented billing; Worker/MCP requests consume plan allowances. Use Workers Free and avoid plan upgrades. Exceeding Free limits can interrupt Worker endpoints. GitHub’s public-repository standard Actions runners are free; artifacts expire after seven days. Existing account subscriptions are not changed by this project.
 
 ## MCP credentials
 
-Hosted MCP is `https://quietscore.cancun.workers.dev/mcp`. Set `MCP_AUTH_TOKEN` as a Cloudflare secret; clients send `Authorization: Bearer <token>`. Keep `ALLOW_PUBLIC_MCP` false. This bearer credential is separate from deployment credentials and survives normal deployments.
+Hosted MCP uses OAuth/PKCE and individual API tokens. See [Authentication](AUTHENTICATION.md) for sign-in setup, revocation, secrets, and KV configuration. The previous shared token is retained only for migration. Set `MCP_AUTH_TOKEN` as a Cloudflare secret; clients send `Authorization: Bearer <token>`. Keep `ALLOW_PUBLIC_MCP` false. This bearer credential is separate from deployment credentials and survives normal deployments.
 
 ```sh
 pnpm exec wrangler secret put MCP_AUTH_TOKEN

@@ -10,11 +10,13 @@ flowchart LR
   Local --> Exports[JSON / text / XLSX / print report]
   AI[Local AI client] --> Stdio[stdio MCP]
   Stdio --> Fresh[Fresh WASM instance per call]
-  Remote[Remote AI client] -->|HTTPS + bearer token| Worker[Stateless Cloudflare Worker]
+  Remote[Remote AI client] -->|HTTPS + OAuth / API token| Worker[Stateless Cloudflare Worker]
   Worker --> Fresh
+  Worker --> Auth[OAuth consent and GitHub sign-in]
+  Auth --> KV[KV: identity, grants, token hashes only]
 ```
 
-Rust owns vector parsing, defaults, canonicalization, scoring, metric definitions/rendering, and XLSX packaging. The browser adapter owns scenario metadata, device APIs, drafts, notes, and interaction state. The MCP SDK owns protocol negotiation and transport. No JavaScript scoring fallback exists.
+Rust owns vector parsing, defaults, canonicalization, scoring, metric definitions/rendering, and XLSX packaging. The browser adapter owns scenario metadata, device APIs, drafts, notes, and interaction state. The MCP SDK owns protocol negotiation and transport. Hosted authorization uses the Cloudflare OAuth provider and a separate consent/connection-management interface; see [Authentication](AUTHENTICATION.md). No JavaScript scoring fallback exists.
 
 FIRST reference files are pinned and hash-verified. Generated metric and lookup files are rebuilt from those sources. Maintained Rust/JS/TS/CSS stay formatted; release LTO/size optimization and esbuild minification happen at build time. CSP hashes cover the exact packaged script. The offline edition includes all assets and license notices.
 

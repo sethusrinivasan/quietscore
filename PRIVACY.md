@@ -4,7 +4,7 @@ QuietScore requires no calculator account and does not collect assessment analyt
 
 ## Browser and offline calculator
 
-The hosted page loads application assets from Cloudflare. Scoring and validation run in Rust/WebAssembly on the device. Imported files, assessment notes, and exports are processed locally. Vectors are never placed in URLs. The application makes no scoring/API requests, uses no external fonts or scripts, and sets no cookies. Content Security Policy uses `connect-src 'none'`.
+The hosted page loads application assets from Cloudflare. Scoring and validation run in Rust/WebAssembly on the device. Imported files, assessment notes, and exports are processed locally. Vectors are never placed in URLs. The application makes no scoring/API requests, uses no external fonts or scripts, and sets no cookies itself. MCP sign-in uses separate authentication cookies on the same host. Content Security Policy uses `connect-src 'none'`.
 
 Drafts are saved only on request in browser localStorage. They are not encrypted or synced by QuietScore. Anyone with access to that browser profile may read them; clearing site data removes them. Delete drafts in the UI or clear the browser’s site storage. Appearance is a session preference. Downloads and clipboard writes occur only when requested.
 
@@ -15,6 +15,12 @@ The offline HTML embeds the engine, data, icons, and styles. Open it from disk w
 Local stdio MCP processes vectors on the client machine. An AI client may independently send them to its model provider.
 
 Hosted MCP sends vectors over HTTPS to Cloudflare. The Worker uses fresh WASM memory per call and does not persist, cache, or log assessments. Hosted MCP is remote processing; use local MCP or the offline calculator when data must remain on the device.
+
+## Authentication
+
+GitHub sign-in requests public identity only, without repository or email permissions. GitHub and Cloudflare process sign-in requests under their policies. One KV namespace stores GitHub numeric IDs/login names in expiring management sessions, OAuth grants/client records, and script-token hashes with owner/name/expiry. GitHub access tokens are not persisted. No assessment vectors, notes, drafts, or files enter auth storage.
+
+Management cookies are Secure, HttpOnly, and SameSite=Lax. Sessions expire after eight hours; OAuth grants and script tokens expire after 30 days. Sign out to remove the current management session and revoke connections/tokens from `/connect`. Revocation propagates under KV’s eventual-consistency model. Expired keys are removed by KV; reusable client metadata follows the OAuth library’s registration lifecycle. Authentication cannot access calculator localStorage.
 
 ## Boundaries
 
