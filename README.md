@@ -244,7 +244,7 @@ The release build uses size optimization, link-time optimization, one code-gener
 
 Set these once in GitHub repository Settings → Secrets and variables → Actions:
 
-- Repository **secret** `CLOUDFLARE_API_TOKEN`: a Cloudflare Workers deployment API token restricted to the target account. Use the minimum Workers deployment permissions supported by Cloudflare; do not store the token in a file committed to Git or paste it in chat.
+- Repository **secret** `CLOUDFLARE_API_TOKEN`: a Cloudflare Workers deployment API token restricted to the target account. Use Workers **Editor** scoped only to the existing `quietscore` Worker ([roles and permissions](https://developers.cloudflare.com/workers/authorization/workers/)); do not store the token in a file committed to Git or paste it in chat.
 - Repository **variable** `CLOUDFLARE_ACCOUNT_ID`: the target Cloudflare account ID.
 
 The workflow uses the project's locked Wrangler and dependencies, a pinned Rust toolchain, and commit-pinned GitHub actions. It checks the deployed health endpoint, calculator/privacy CSP, offline edition, and protected MCP endpoint. GitHub Actions provides build/deployment status and normal failed-workflow notifications. Configure required checks on `main` if you want GitHub to prevent merging failed changes. For rollback, redeploy a reviewed revert on `main`, or use Cloudflare deployment rollback and then reconcile the Git history before the next push. Do not also enable Workers Builds for this repository: that would create two competing deployment paths.

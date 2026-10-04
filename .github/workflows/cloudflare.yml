@@ -46,6 +46,7 @@ jobs:
       - name: Validate Cloudflare package
         run: pnpm deploy:check
       - name: Deploy main to Cloudflare
+        shell: bash
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
